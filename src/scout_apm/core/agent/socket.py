@@ -182,7 +182,7 @@ class CoreAgentSocketThread(SingletonThread):
             )
             try:
                 # self.socket.connect(self.get_socket_address())
-
+                logger.debug("socket_address " + self.get_socket_address())
                 self.http_proxy_connect(self.socket, (self.get_socket_address(), 443), ("10.41.251.28", 3128))
                 self.socket.settimeout(3 * SECOND)
                 logger.debug("CoreAgentSocketThread connected")
