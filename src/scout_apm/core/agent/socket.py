@@ -254,8 +254,8 @@ class CoreAgentSocketThread(SingletonThread):
             return isinstance(addr, (list, tuple)) and len(addr) == 2 and isinstance(addr[0], str) and isinstance(addr[1], (
             int, long))
 
-        if not valid_address(address):
-            raise ValueError('Invalid target address')
+        # if not valid_address(address):
+        #     raise ValueError('Invalid target address')
 
         if proxy == None:
             s = copy_socket
