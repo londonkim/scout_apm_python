@@ -147,7 +147,7 @@ def urllib3_cert_pool_manager(**kwargs):
     else:
         CERT_REQUIRED = b"CERT_REQUIRED"
     # return urllib3.PoolManager(cert_reqs=CERT_REQUIRED, ca_certs=certifi.where())
-    return urllib3.ProxyManager('http://proxy.daumkakao.io:3128/')
+    return urllib3.ProxyManager('http://proxy.daumkakao.io:3128/', cert_reqs=CERT_REQUIRED, ca_certs=certifi.where())
 
 __all__ = [
     "ContextDecorator",
