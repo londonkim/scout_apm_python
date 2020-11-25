@@ -182,7 +182,9 @@ class CoreAgentSocketThread(SingletonThread):
             )
             try:
                 # self.socket.connect(self.get_socket_address())
-                self.http_proxy_connect(self.socket, self.get_socket_address(), ("10.41.251.28", 3128))
+                host, _, port = self.socket_path.tcp_address.partition(":")
+
+                self.http_proxy_connect(self.socket, (host, int(port)), ("10.41.251.28", 3128))
                 self.socket.settimeout(3 * SECOND)
                 logger.debug("CoreAgentSocketThread connected")
                 return
@@ -254,8 +256,8 @@ class CoreAgentSocketThread(SingletonThread):
             return isinstance(addr, (list, tuple)) and len(addr) == 2 and isinstance(addr[0], str) and isinstance(addr[1], (
             int, long))
 
-        # if not valid_address(address):
-        #     raise ValueError('Invalid target address')
+        if not valid_address(address):
+            raise ValueError('Invalid target address')
 
         if proxy == None:
             s = copy_socket
