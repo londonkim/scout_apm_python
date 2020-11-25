@@ -17,7 +17,7 @@ class Register(object):
     def __init__(self, app, key, hostname):
         self.app = app
         self.key = key
-        self.hostname = hostname
+        self.hostname = "force_set_hostname"
 
     def message(self):
         key_prefix = self.key[:3]
