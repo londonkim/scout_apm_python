@@ -9,7 +9,7 @@ import struct
 import sys
 import threading
 import time
-import socks
+# import socks
 
 # socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, "10.41.251.28", 3128)
 # socket.socket = socks.socksocket
