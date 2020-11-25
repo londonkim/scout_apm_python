@@ -234,7 +234,7 @@ class CoreAgentSocketThread(SingletonThread):
       author, the source and this license, is put along with the source code.
     '''
 
-    def http_proxy_connect(copy_socket, address, proxy=None, auth=None, headers={}):
+    def http_proxy_connect(self, copy_socket, address, proxy=None, auth=None, headers={}):
         """
         Establish a socket connection through an HTTP proxy.
 
