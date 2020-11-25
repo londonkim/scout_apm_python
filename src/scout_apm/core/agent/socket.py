@@ -21,7 +21,7 @@ from scout_apm.core.config import scout_config
 from scout_apm.core.threading import SingletonThread
 
 # Time unit - monkey-patched in tests to make them run faster
-SECOND = 1
+SECOND = 5
 
 logger = logging.getLogger(__name__)
 
